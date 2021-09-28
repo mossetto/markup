@@ -12,7 +12,7 @@ lottie.loadAnimation({
   renderer: 'svg',
   loop: false,
   autoplay: true,
-  path: 'lapiz.json' // the path to the animation json
+  path: 'js/pencil.json' // the path to the animation json
 });
 
 $(document).ready(function(){
