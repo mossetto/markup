@@ -1,0 +1,43 @@
+// normalitation
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+//   Breakpoints
+  $xs: 0;
+  $sm: 576px;
+  $md: 768px;
+  $lg: 992px;
+  $xl: 1200px;
+  $xxl: 1400px;
+
+// basics styles
+  body {
+    background-color: #F8F8F8;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadein .8s;
+    animation-fill-mode: forwards;
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+        margin-left: -15px;
+      }
+      100% {
+        opacity: 1;
+        margin-left: 0px;
+      }
+    }
+  }
+  .br-responsive {
+    display: none;
+    @media screen and (max-width: $md) {
+      display: block;
+    }
+  }
+  
+  
