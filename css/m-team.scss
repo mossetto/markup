@@ -1,5 +1,5 @@
 
-.module {
+.m-team {
   display: flex;
   justify-content: center;
 
@@ -70,8 +70,8 @@
     }
   }
 }
-.headline {
-  &__subtitle {
+
+  .headline__subtitle {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     margin-bottom: 24px;
@@ -82,7 +82,7 @@
       margin-bottom: 22px;
     }
   }
-  &__title {
+  .headline__title {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 400;
     font-size: 75px;
@@ -90,7 +90,7 @@
       font-size: 40px;
     }
   }
-}
+
 .bolded {
   font-weight: 700;
   font-variation-settings: 'wght' 400;
@@ -113,7 +113,7 @@
     }
   }
 }
-.module__draw {
+.m-team__draw {
   width: 268px;
   height: 210px;
   position: absolute;
