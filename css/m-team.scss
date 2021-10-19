@@ -1,0 +1,246 @@
+
+.module {
+  display: flex;
+  justify-content: center;
+
+  &__box {
+    padding-top: 133px;
+    padding-bottom: 133px;
+    width: 1249px;
+    position: relative;
+    @media screen and (max-width: $xxl) {
+      width: $xl;
+    }
+    @media screen and (max-width: $xl) {
+      width: $lg;
+    }
+    @media screen and (max-width: $lg) {
+      width: $md;
+      padding-top: 72px;
+      padding-bottom: 72px;
+      text-align: center;
+    }
+    @media screen and (max-width: $md) {
+      width: $sm;
+      padding-bottom: 34px;
+    }
+    @media screen and (max-width: $sm) {
+      width: 100%;
+    }
+  }
+  &__headline {
+    position: relative;
+    padding: 6px 26px;
+    margin-bottom: 60px;
+    display: inline-block;
+    color: #161616;
+    cursor: default;
+    @media screen and (max-width: $md) {
+      margin-bottom: 26px;
+    }
+    &::before {
+      content: '';
+      background-color: #E7E7E7;
+      height: 42px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+      animation: expand 1s;
+      @keyframes expand {
+        0% {
+          height: 0;
+        }
+        100% {
+          height: 42px;
+        }
+      }
+      @media screen and (max-width: $md) {
+        height: 26px;
+        @keyframes expand {
+          0% {
+            height: 0;
+          }
+          100% {
+            height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+.headline {
+  &__subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-bottom: 24px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    @media screen and (max-width: $lg) {
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+  }
+  &__title {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+    font-size: 75px;
+    @media screen and (max-width: $lg) {
+      font-size: 40px;
+    }
+  }
+}
+.bolded {
+  font-weight: 700;
+  font-variation-settings: 'wght' 400;
+  -webkit-transition: 0.25s ease 0s;
+  transition: 0.25s ease 0s;
+  animation: bolding 2s;
+  animation-fill-mode: forwards;
+  @keyframes bolding {
+    0% {
+      font-variation-settings: 'wght' 400;
+    }
+    50% {
+      font-variation-settings: 'wght' 700;
+    }
+    75% {
+      font-variation-settings: 'wght' 400;
+    }
+    100% {
+      font-variation-settings: 'wght' 700;
+    }
+  }
+}
+.module__draw {
+  width: 268px;
+  height: 210px;
+  position: absolute;
+  right: 0;
+  top: 144px;
+  @media screen and (max-width: $lg) {
+    display: none;
+  }
+}
+
+
+
+// slider
+
+.slider__item {
+  padding-left: 26px;
+  padding-right: 26px;
+
+  &__img {
+    margin: auto auto;
+    margin-bottom: 31px;
+    width: 100%;
+    @media screen and (max-width: $sm) {
+      width: 91%;
+    }
+  }
+  &__info {
+    @media screen and (max-width: $md) {
+      margin-top: -53px;
+    }
+
+    &__title {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-weight: 400;
+      font-size: 26px;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+      @media screen and (max-width: $md) {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+    }
+    &__subtitle {
+      font-family: 'Lato', sans-serif;
+      font-weight: 200;
+      font-size: 18px;
+      @media screen and (max-width: $md) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+.slick-slide {
+  transition: opacity .8s, margin-top .8s;
+}
+
+// start custom slick dots/ arrows
+.slick-dots {
+  bottom: -80px;
+
+  & li {
+    width: 13px;
+    height: 13px;
+    margin: 0 4.5px;
+    & button {
+      width: 13px;
+      height: 13px;
+      &:before {
+        width: 13px;
+        height: 13px;
+        background-color: #EC4133;
+        border-radius: 7px;
+        content: '';
+        transition: width .3s;
+      }
+    }
+    &.slick-active {
+      width: 26px;
+    }
+    &.slick-active button {
+      width: 26px;
+      &:before {
+        transition: width .5s;
+        opacity: 1;
+        width: 26px;
+        height: 13px;
+        background-color: #EC4133;
+        border-radius: 7px;
+        content: '';
+      }
+    }
+  }
+}
+.slick-next,
+.slick-prev,
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  z-index: 99;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  border: 1px solid #A8A8A8;
+  background-color: #f8f8f8;
+  background-image: url("arrow.svg");
+  background-position: center;
+  background-size: 9px;
+  background-repeat: no-repeat;
+  transform-origin: 50% 25%;
+  &::before {
+    content: '';
+  }
+  @media screen and (max-width: $sm) {
+    top: 42%;
+  }
+}
+.slick-next {
+  transform: rotate(180deg);
+  @media screen and (max-width: $md) {
+    right: 8%;
+  }
+}
+.slick-prev {
+  @media screen and (max-width: $md) {
+    left: 9%;
+  }
+}
+// end custom slick dots/ arrows
+
