@@ -1,3 +1,3 @@
-# entrega
+# Layouting
 
-Demo, maqueta responsive, BEB, SCSS,
+Slide responsive, BEM, SASS, Animation
